@@ -3,6 +3,7 @@
 #include <QTcpSocket>
 
 #define PORT 10000
+#define BROADCAST_PORT 10001
 
 class Client : public QObject
 {
@@ -10,6 +11,7 @@ class Client : public QObject
 private:
     QTcpSocket* socket;
 public:
+    Client(QString host, int port);
     Client(int port);
 signals:
     void onMessageReceived(QString*);

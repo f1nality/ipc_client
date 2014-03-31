@@ -10,6 +10,16 @@ Client::Client(int port)
 
 }
 
+Client::Client(QString host, int port)
+{
+    socket = new QTcpSocket();
+
+    connect(socket, SIGNAL(connected()), this, SLOT(connectedToServer()));
+    connect(socket, SIGNAL(readyRead()), this, SLOT(readData()));
+    socket->connectToHost(host, port);
+
+}
+
 void Client::connectedToServer() {
     emit onConnectedToServer();
 }

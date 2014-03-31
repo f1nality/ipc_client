@@ -30,7 +30,7 @@
    <widget class="QPushButton" name="connectButton">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>330</x>
       <y>0</y>
       <width>75</width>
       <height>23</height>
@@ -61,6 +61,19 @@
       <width>301</width>
       <height>31</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="searcherButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Search Chater</string>
     </property>
    </widget>
   </widget>
