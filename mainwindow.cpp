@@ -29,15 +29,14 @@ void MainWindow::initializeState() {
 void MainWindow::processPendingDatagrams()
  {
      if (udpSocket->hasPendingDatagrams()) {
-         QString ip = QString("%1").arg(udpSocket->IPv4Protocol);
-
+         QHostAddress addr;
          QByteArray datagram;
          datagram.resize(udpSocket->pendingDatagramSize());
-         udpSocket->readDatagram(datagram.data(), datagram.size());
-         ui->listWidget->addItem(tr("IP: %1 Received datagram: \"%2\"").arg(ip, datagram.data()));
+         udpSocket->readDatagram(datagram.data(), datagram.size(), &addr);
+         ui->listWidget->addItem(tr("Received datagram: \"%1\"").arg(datagram.data()));
 
          ui->sendButton->setEnabled(true);
-         client = new Client(QString("%1").arg(ip), PORT);
+         client = new Client(addr, PORT);
      }
  }
 
