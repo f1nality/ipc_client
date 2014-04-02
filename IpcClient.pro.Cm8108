@@ -15,9 +15,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    client.cpp
+    client.cpp \
+    broadcastreceiver.cpp
 
 HEADERS  += mainwindow.h \
-    client.h
+    client.h \
+    broadcastreceiver.h
 
 FORMS    += mainwindow.ui

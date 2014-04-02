@@ -16,20 +16,16 @@ class MainWindow : public QMainWindow
 
 public:
     Client *client;
-    QTimer *timer;
-    QUdpSocket* udpSocket;
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
 private:
     Ui::MainWindow *ui;
-    void initializeState();
 private slots:
     void onConnectedToServer();
-    void onMessageReceived(QString* data);
+    void onMessageReceived(QString data);
     void onConnectedButtonClicked();
     void onSendButtonClicked();
-    void processPendingDatagrams();
 };
 
 #endif // MAINWINDOW_H
